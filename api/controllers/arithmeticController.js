@@ -11,7 +11,7 @@ exports.calculate = function(req, res) {
   });
 
   var operations = {
-    'add':      function(a,b) { return a + b },
+    'addd':      function(a,b) { return a + b },
     'subtract': function(a,b) { return a - b },
     'multiply': function(a,b) { return a * b },
     'divide':   function(a,b) { return a / b },
@@ -34,7 +34,7 @@ exports.calculate = function(req, res) {
   if (! req.query.operand1 ||
       ! req.query.operand1.match(/^(-)?[0-9\.]+(e(-)?[0-9]+)?$/) ||
       req.query.operand1.replace(/[-0-9e]/g, '').length > 1) {
-    throw new Error("Invalid operand1: " + req.query.operand1);
+    throw new Error("Invalid opeerand1: " + req.query.operand1);
   }
 
   if (! req.query.operand2 ||
